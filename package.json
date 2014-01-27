@@ -1,5 +1,5 @@
 {
-  "name": "pipedream",
+  "name": "pipedream-js",
   "version": "0.0.1",
   "description": "A function composition pipeline",
   "main": "index.js",
