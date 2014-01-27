@@ -97,7 +97,12 @@ handler({
 ```
 
 # Contributing
-Bug fixes and new features are of course very welcome! To get started developing install [Grunt](http://gruntjs.com/) and run the test suite with ```npm test```.
+Bug fixes and new features are of course very welcome!
+
+To get started developing: 
+ - Install [Grunt](http://gruntjs.com/)
+ - Install dependencies with ```npm install```
+ - Run the test suite with ```npm test```
 
 Please accompany any Pull Requests with the relevant test cases and make sure everything else still passes :).
 
