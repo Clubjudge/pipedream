@@ -1,0 +1,35 @@
+{
+  "name": "pipedream",
+  "version": "0.0.1",
+  "description": "A function composition pipeline",
+  "main": "index.js",
+  "scripts": {
+    "test": "grunt test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Clubjudge/pipedream.git"
+  },
+  "keywords": [
+    "pipeline",
+    "composition",
+    "functional"
+  ],
+  "author": "ClubJudge",
+  "license": "BSD",
+  "bugs": {
+    "url": "https://github.com/Clubjudge/pipedream/issues"
+  },
+  "homepage": "https://github.com/Clubjudge/pipedream",
+  "devDependencies": {
+    "grunt-jasmine-node-coverage": "~0.1.7",
+    "grunt-contrib-jshint": "~0.8.0",
+    "grunt": "~0.4.2",
+    "grunt-contrib-watch": "~0.5.3"
+  },
+  "dependencies": {
+    "q": "~1.0.0",
+    "syringe-js": "0.0.1",
+    "lodash": "~2.4.1"
+  }
+}
