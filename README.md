@@ -44,14 +44,14 @@ handler()
 
 ## Flow control
 
-In the signature of any composed function, you can include the special ```$next``` and ```$fail``` arguments. These are injected automatically using [Syringe](https://github.com/Clubjudge/syringe). You can use these functions to yield to the next function to the pipeline or introduce a failure state in the chain.
+In the signature of any composed function, you can include the special ```$yield``` and ```$fail``` arguments. These are injected automatically using [Syringe](https://github.com/Clubjudge/syringe). You can use these functions to yield to the next function to the pipeline or introduce a failure state in the chain.
 
 ```javascript
 // A composed function
-var fn1 = function($next, $fail) {
+var fn1 = function($yield, $fail) {
   someOperation(function(err) {
     if (!err) {
-      $next();
+      $yield();
     } else {
       $fail('someOperation failed miserably :(');
     }
@@ -61,15 +61,15 @@ var fn1 = function($next, $fail) {
 
 ## The result object
 
-At the beginning of the pipeline an empty object is injected and assigned to the special ```$res``` parameter. Your functions may then require this parameter in their signatures and mutate it how they see fit. When a function yields by calling ```$next``` the ```$res``` object is passed as it is to the next function in the pipeline.
+At the beginning of the pipeline an empty object is injected and assigned to the special ```$res``` parameter. Your functions may then require this parameter in their signatures and mutate it how they see fit. When a function yields by calling ```$yield``` the ```$res``` object is passed as it is to the next function in the pipeline.
 
 ```javascript
 // Some composed functions
-var fn1 = function($res, $next, $fail) {
+var fn1 = function($res, $yield, $fail) {
   someOperation(function(result, err) {
     if (!err) {
       $res = result;
-      $next();
+      $yield();
     } else {
       $fail('someOperation failed miserably :(');
     }

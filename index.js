@@ -12,8 +12,8 @@
   inject = require('syringe-js');
   response = require('./lib/response');
 
-  construct = function($next) {
-    $next(response());
+  construct = function($yield) {
+    $yield(response());
   };
 
   pipeline = function(callbacks, result, args, dfd) {
@@ -24,7 +24,7 @@
 
     var fn = inject(callbacks[0], args , {
       $res: result,
-      $next: function(result) {
+      $yield: function(result) {
         process.nextTick(function() {
           pipeline.call(this, callbacks.slice(1), result, args, dfd);
         });
